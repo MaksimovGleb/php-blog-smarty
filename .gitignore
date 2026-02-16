@@ -1,0 +1,22 @@
+# Зависимости
+/vendor/
+
+# Smarty (кэш и скомпилированные шаблоны)
+/templates_c/*
+!/templates_c/.gitkeep
+/cache/*
+!/cache/.gitkeep
+
+# Конфигурация (чувствительные данные)
+/config/db.php
+
+# IDE и системные файлы
+.idea/
+.zencoder/
+.DS_Store
+Thumbs.db
+
+# Загрузки и статика
+/uploads/*
+!/uploads/.gitkeep
+/public/assets/css/*.css
