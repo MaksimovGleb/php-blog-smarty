@@ -20,3 +20,6 @@ Thumbs.db
 /uploads/*
 !/uploads/.gitkeep
 /public/assets/css/*.css
+
+# Repo info
+repo.md
