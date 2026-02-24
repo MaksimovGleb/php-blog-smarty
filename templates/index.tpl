@@ -3,26 +3,32 @@
 {block name=title}Главная - Мой Блог{/block}
 
 {block name=content}
-    <h1>Категории блога</h1>
-
     {foreach $categories as $category}
-        <section class="category-block">
-            <h2>{$category.name}</h2>
-            <p>{$category.description}</p>
+        <section class="category-section">
+            <div class="category-header">
+                <h2 class="category-title">{$category.name|upper}</h2>
+                <a href="/category.php?id={$category.id}" class="view-all">View All</a>
+            </div>
             
             <div class="articles-grid">
                 {foreach $category.articles as $article}
-                    <div class="article-card">
-                        <img src="{$article.image}" alt="{$article.title}" style="width: 200px;">
-                        <h3><a href="/article.php?id={$article.id}">{$article.title}</a></h3>
-                        <p>{$article.description}</p>
-                        <span>Дата: {$article.created_at}</span>
-                    </div>
+                    <article class="article-card">
+                        <div class="article-image">
+                            <a href="/article.php?id={$article.id}">
+                                <img src="{$article.image}" alt="{$article.title}">
+                            </a>
+                        </div>
+                        <div class="article-body">
+                            <h3 class="article-title">
+                                <a href="/article.php?id={$article.id}">{$article.title}</a>
+                            </h3>
+                            <div class="article-date">{$article.created_at|date_format:"%B %e, %Y"}</div>
+                            <p class="article-excerpt">{$article.description}</p>
+                            <a href="/article.php?id={$article.id}" class="continue-reading">Continue Reading</a>
+                        </div>
+                    </article>
                 {/foreach}
             </div>
-
-            <a href="/category.php?id={$category.id}" class="btn">Все статьи категории {$category.name}</a>
-            <hr>
         </section>
     {/foreach}
 {/block}

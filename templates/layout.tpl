@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Главная</a>
-        </nav>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">Blogy<span>.</span></a>
+            </div>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         {block name=content}{/block}
     </main>
 
-    <footer>
-        <p>&copy; 2026 Мой Блог на PHP + Smarty</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>Copyright &copy;2026. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 </html>

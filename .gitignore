@@ -1,5 +1,7 @@
 # Зависимости
 /vendor/
+/node_modules/
+package-lock.json
 
 # Smarty (кэш и скомпилированные шаблоны)
 /templates_c/*

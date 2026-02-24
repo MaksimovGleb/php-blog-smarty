@@ -1,0 +1,19 @@
+{
+    "name": "maksimovgleb/php-blog-smarty",
+    "description": "Простой блог на чистом PHP с использованием шаблонизатора Smarty и MySQL",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MaksimovGleb"
+        }
+    ],
+    "require": {
+        "smarty/smarty": "^4.3"
+    }
+}

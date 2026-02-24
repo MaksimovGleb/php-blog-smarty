@@ -1,0 +1,13 @@
+{
+  "name": "php-blog-smarty",
+  "version": "1.0.0",
+  "description": "Простой блог на чистом PHP с использованием Smarty и SCSS",
+  "main": "public/index.php",
+  "scripts": {
+    "css": "sass assets/scss/style.scss public/assets/css/style.css",
+    "css:watch": "sass --watch assets/scss/style.scss public/assets/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

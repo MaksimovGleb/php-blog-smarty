@@ -2,8 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Smarty;
-
+// Инициализация Smarty
 $smarty = new Smarty();
 
 $smarty->setTemplateDir(__DIR__ . '/../templates');

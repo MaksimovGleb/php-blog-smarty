@@ -59,12 +59,13 @@ class Article extends BaseModel {
         $sql = "SELECT DISTINCT a.* FROM articles a
                 JOIN article_categories ac ON a.id = ac.article_id
                 WHERE ac.category_id IN (
-                    SELECT category_id FROM article_categories WHERE article_id = :id
-                ) AND a.id != :id
+                    SELECT category_id FROM article_categories WHERE article_id = :id_sub
+                ) AND a.id != :id_main
                 LIMIT :limit";
         
         $stmt = $this->db->prepare($sql);
-        $stmt->bindValue(':id', $articleId, PDO::PARAM_INT);
+        $stmt->bindValue(':id_sub', $articleId, PDO::PARAM_INT);
+        $stmt->bindValue(':id_main', $articleId, PDO::PARAM_INT);
         $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
